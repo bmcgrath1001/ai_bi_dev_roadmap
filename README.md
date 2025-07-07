@@ -5,13 +5,16 @@ Welcome to the `ai_bi_dev_roadmap` — a structured, living guide to becoming a 
 ---
 
 ## 📂 Repo Structure
+
+```text
 .
-├── 00_foundations/             # Core knowledge areas (SQL, Python, Cloud, Data Architecture)
-├── 01_tools_and_platforms/     # Hands-on guides for Trino, Postgres, S3, dbt, Airflow
-├── 02_ai_workflows/            # GPT prompt libraries, automation use cases, AI-powered debugging
-├── 03_projects_and_wins/       # Personal project logs, dashboard rewrites, GPT success stories
-├── 04_job_search_and_growth/   # Resume drafts, job strategy notes, AI pitch templates
-└── README.md                   # You’re here :)
+├── 00_foundations/           # Core knowledge areas (SQL, Python, Cloud, Data Architecture)
+├── 01_tools_and_platforms/   # Hands-on guides for Trino, Postgres, S3, dbt, Airflow
+├── 02_ai_workflows/          # GPT prompt libraries, automation use cases, AI-powered debugging
+├── 03_projects_and_wins/     # Personal project logs, dashboard rewrites, GPT success stories
+├── 04_job_search_and_growth/ # Resume drafts, job strategy notes, AI pitch templates
+└── README.md                 # You're here :)
+```
 
 ---
 
