@@ -66,10 +66,12 @@ Keep it lightweight or modular:
 
 ## 🔗 Phase 3: Simulate Workflow Access
 
-ChatGPT can’t directly query S3 or Trino — but you can simulate access by pasting context like:
+ChatGPT can’t directly query S3 or Trino — but you can simulate access by pasting context:
 
-- SQL query examples  
-- Table structures  
-- DAG logic  
-- Data volumes and partitioning schemes  
-- Pipeline stages and dependencies
+| **Task**              | **How to Give Context**                                             |
+|-----------------------|----------------------------------------------------------------------|
+| Query optimization    | Paste SQL + platform (Trino, Postgres, etc.)                         |
+| Pipeline review       | Paste DAG logic or Airflow `.py` task                                |
+| Debugging help        | Paste error + code snippet                                           |
+| Performance tuning    | Mention volume, filter columns, and partition strategy               |
+| ETL logic generation  | Describe the source → staging → curated path                         |
