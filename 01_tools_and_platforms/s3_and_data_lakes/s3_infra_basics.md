@@ -33,15 +33,24 @@ S3 is a common choice for modern data lakes because of:
 
 ## 🧪 Example S3 Bucket Structure for a Data Lake
 
+```text
 s3://snap-data-lake/
 ├── raw/
-│   └── transactions/2025/07/07/txn_data.parquet
+│   └── transactions/
+│       └── 2025/07/07/
+│           └── txn_data.parquet
 ├── cleaned/
-│   └── customers/2025/07/07/customers_cleaned.parquet
+│   └── customers/
+│       └── 2025/07/07/
+│           └── customers_cleaned.parquet
 ├── curated/
-│   └── metrics/2025/07/07/daily_summary.parquet
+│   └── metrics/
+│       └── 2025/07/07/
+│           └── daily_summary.parquet
 └── logs/
-└── job_name=load_customers/run_id=12345/…
+    └── job_name=load_customers/
+        └── run_id=12345/
+```
 
 ---
 
