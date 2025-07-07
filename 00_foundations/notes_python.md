@@ -124,3 +124,51 @@ df = pd.read_sql("SELECT * FROM my_table", engine)
 - Start small: write simple scripts and automate daily BI tasks.
 - Refactor frequently: modular, readable code is key.
 - Learn to debug with `print()`, `try/except`, and breakpoints.
+
+---
+
+## 💬 ChatGPT Prompt Library for Python
+
+Use these to accelerate development, debugging, and problem-solving.
+
+### 🧹 Data Cleaning
+
+> "Here’s a `pandas` DataFrame. What’s the fastest way to clean NaNs, convert date columns, and standardize text formats?"
+
+### 🧪 Debugging Help
+
+> "I'm getting this error in my Python script: `[insert error here]`. Here's the relevant code snippet. What’s likely causing this and how do I fix it?"
+
+### 📈 Visualization
+
+> "Write Python code using `matplotlib` or `seaborn` to plot a histogram of column `X` from my DataFrame. Make it clean and professional."
+
+### 🔄 Loop Refactoring
+
+> "Can you help me refactor this nested for loop into a more Pythonic or vectorized solution?"
+
+### 🧠 Explain Code
+
+> "Explain what this Python function does and suggest improvements. Here’s the function: `[paste function here]`."
+
+### 📂 File Automation
+
+> "Write a script that reads every `.csv` in a folder, cleans the data (drops nulls, converts dates), and saves to `.parquet`."
+
+### 🧵 Multithreading/Multiprocessing
+
+> "I need to speed up a script that processes lots of API calls. Should I use `asyncio`, `concurrent.futures`, or `multiprocessing`?"
+
+### 📦 Conda/Pip Environments
+
+> "Help me write a `requirements.txt` or `environment.yml` file for the following packages, and explain how to install them into a virtual environment."
+
+---
+
+### 🧩 Prompt Writing Tips
+
+- Be specific: include context, expected outcome, and constraints.
+- Give an example input and desired output if possible.
+- Reference your working environment if relevant (e.g., VS Code, Streamlit, Airflow).
+
+---
