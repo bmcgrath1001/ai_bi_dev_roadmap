@@ -75,3 +75,37 @@ ChatGPT can’t directly query S3 or Trino — but you can simulate access by pa
 | Debugging help        | Paste error + code snippet                                           |
 | Performance tuning    | Mention volume, filter columns, and partition strategy               |
 | ETL logic generation  | Describe the source → staging → curated path                         |
+
+---
+
+## 🛠️ Tools That Pair Well
+
+- ✏️ Schema snapshots (`.md` or `.csv`)  
+- 🧹 Cleaning playbooks for key tables  
+- 📈 KPI dashboards or metric descriptions  
+- 📁 Git-style project layout: `sql/`, `python/`, `dashboards/`, `notes/`
+
+---
+
+## 🧩 Recommended Context File: `context_gpt.md`
+
+Create a reusable file to paste into ChatGPT when starting a session:
+
+<details>
+<summary>📄 Example: context_gpt.md</summary>
+
+```markdown
+# GPT Context for Snap BI Projects
+
+## Environment
+- Query engine: Trino
+- Main schemas: `snap_analytics.snapdata`, `hive.bi`, `adl.bi`
+- Timezone: 'America/Denver'
+
+## Naming Conventions
+- Prefixes: `stg_`, `fct_`, `dim_`, `curated_`
+- Use snake_case for tables and columns
+
+## Data Projects
+- Merchant rankings: use `customer_account`, `customer_application`, `merchant`
+- Fraud monitoring: relies on `fraud_flag`, `investigation_outcomes`, `funded_amount`
