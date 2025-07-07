@@ -32,3 +32,49 @@ S3 is a common choice for modern data lakes because of:
 ---
 
 ## 🧪 Example S3 Bucket Structure for a Data Lake
+
+s3://snap-data-lake/
+├── raw/
+│   └── transactions/2025/07/07/txn_data.parquet
+├── cleaned/
+│   └── customers/2025/07/07/customers_cleaned.parquet
+├── curated/
+│   └── metrics/2025/07/07/daily_summary.parquet
+└── logs/
+└── job_name=load_customers/run_id=12345/…
+
+---
+
+## 🔐 Security & Governance
+
+- **Bucket policies & IAM roles** define access control  
+- **SSE (Server-Side Encryption)** encrypts objects at rest  
+- **Object versioning** helps recover deleted or modified files  
+- **Lifecycle policies** automate archiving & deletion  
+
+---
+
+## 📊 Performance Considerations
+
+- Use **partitioned paths** (`year/month/day/...`) for analytics tools like Trino or Athena  
+- Prefer **columnar formats** (Parquet, ORC) for efficient scanning  
+- Avoid **many small files** (use compaction or batching)  
+- Enable **S3 Select** to fetch partial object data if needed  
+
+---
+
+## 🧠 Useful ChatGPT Prompts
+
+- “Design an S3 bucket layout for a layered data lake (raw → cleaned → curated).”  
+- “How do I configure IAM policies to allow read-only access to `s3://my-bucket/curated/`?”  
+- “Compare Parquet vs CSV performance on S3 for Athena.”  
+- “Write a Trino query to read partitioned data from S3.”
+
+---
+
+## 📚 Resources
+
+- [Amazon S3 Documentation](https://docs.aws.amazon.com/s3/index.html)  
+- [AWS Data Lake Architecture Guide](https://docs.aws.amazon.com/whitepapers/latest/building-data-lakes/index.html)  
+- [What is a Data Lake? (AWS)](https://aws.amazon.com/big-data/datalakes-and-analytics/what-is-a-data-lake/)  
+- [AWS Lake Formation](https://aws.amazon.com/lake-formation/)
