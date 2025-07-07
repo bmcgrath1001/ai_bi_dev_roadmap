@@ -111,6 +111,8 @@ Create a reusable file to paste into ChatGPT when starting a session:
 - Fraud monitoring: relies on `fraud_flag`, `investigation_outcomes`, `funded_amount`
 ```
 
+</details>
+
 ---
 
 Then use prompts like:
