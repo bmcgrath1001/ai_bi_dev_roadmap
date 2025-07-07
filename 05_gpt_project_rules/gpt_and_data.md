@@ -27,38 +27,49 @@ WHERE table_schema = 'snapdata'
 
 Paste the result into ChatGPT along with your goal:
 
-“Here’s the schema for customer_account. Help me write cleaning logic or build a dbt model for it.”
+> “Here’s the schema for `customer_account`. Help me write cleaning logic or build a dbt model for it.”
 
 📁 You can also version this in your repo as:
 
 00_foundations/schemas/customer_account.md
 
-B. Add Business Meaning
+---
+
+### 🧠 B. Add Business Meaning
 
 Include semantic info ChatGPT can reason with:
 
-“The fraud_flag in customer_application marks apps auto-flagged by rules. Final verdicts come from fraud_investigation_outcomes.”
+> “The `fraud_flag` in `customer_application` marks apps auto-flagged by rules.  
+> Final verdicts come from `fraud_investigation_outcomes`.”
 
 This helps with:
-	•	Feature engineering
-	•	Cohort tracking
-	•	Dash metrics alignment
+- Feature engineering  
+- Cohort tracking  
+- Dashboard metrics alignment
 
-⸻
+---
 
-📘 Phase 2: Build a Data Dictionary
+## 📘 Phase 2: Build a Data Dictionary
 
-Already working in Excel or Markdown? Upload it.
+Already working in Excel or Markdown? Upload it directly.
 
-ChatGPT can:
-	•	Autogenerate field descriptions
-	•	Flag inconsistent naming or logic
-	•	Suggest validation or cleaning rules
+ChatGPT can help you:
+- Autogenerate field descriptions  
+- Flag inconsistent naming or logic  
+- Suggest validation or cleaning rules  
 
 Keep it lightweight or modular:
 
 00_foundations/data_dictionary/fraud_tables.xlsx
 
-🔗 Phase 3: Simulate Workflow Access
+---
 
-ChatGPT can’t directly query S3 or Trino — but you can simulate access by pasting context:
+## 🔗 Phase 3: Simulate Workflow Access
+
+ChatGPT can’t directly query S3 or Trino — but you can simulate access by pasting context like:
+
+- SQL query examples  
+- Table structures  
+- DAG logic  
+- Data volumes and partitioning schemes  
+- Pipeline stages and dependencies
