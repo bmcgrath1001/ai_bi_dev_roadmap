@@ -1,26 +1,95 @@
-🏗️ notes_data_architecture.md
+# Notes: Data Architecture
 
-1. What is Data Architecture?
+## 📦 What Is Data Architecture?
 
-Data architecture is the blueprint for how data is collected, stored, transformed, and accessed across an organization. It determines the flow of data from source systems all the way to business intelligence tools and dashboards.
+Data architecture is the **design and structure** of how data is collected, stored, accessed, and managed across systems in an organization.
 
-2. Core Components
-	•	Data Sources: Where data originates. Could be transactional databases, applications, APIs, external vendors, etc.
-	•	ETL/ELT Pipelines: Move and transform data from source to storage (ETL = Extract, Transform, Load; ELT = Extract, Load, Transform).
-	•	Data Storage Layers:
-	•	Raw Layer (Data Lake): Stores unstructured/semi-structured data (often in S3, GCS, or HDFS).
-	•	Staging Layer: Intermediate transformed data, often still granular.
-	•	Warehouse Layer: Clean, structured, and analytics-ready data (e.g., Snowflake, Redshift, BigQuery, Postgres).
-	•	Data Modeling: Organizing data into logical layers: facts, dimensions, star/snowflake schemas.
-	•	Serving Layer: Where data is consumed—BI tools, APIs, or ML pipelines.
+At a high level, it includes:
 
-3. Key Concepts
-	•	Data Lineage: Where data came from and how it changed along the way.
-	•	Data Governance: Ensures data quality, security, privacy, and consistency.
-	•	Scalability: Can your architecture handle more data, more users, more queries?
-	•	Batch vs Stream: Do you move data every hour (batch), or as events happen (stream)?
+- **Sources** (e.g., applications, APIs, external vendors)
+- **Storage systems** (e.g., PostgreSQL, S3, Snowflake)
+- **Transformation layers** (e.g., Airflow, dbt)
+- **Access layers** (e.g., BI tools, dashboards, APIs)
 
-4. Roles Involved
-	•	Data Engineers: Build the infrastructure (pipelines, storage, orchestration).
-	•	BI Developers: Focus on metrics, SQL modeling, dashboards, and storytelling.
-	•	Data Architects: Design the full system with business and scalability in mind.
+---
+
+## 🏗️ Core Components
+
+### 1. **Data Sources**
+Where data originates:
+- Internal apps (e.g., web forms, mobile apps)
+- External systems (e.g., vendors, third-party APIs)
+- Event streams (e.g., Kafka)
+
+### 2. **Ingestion Layer**
+How data is brought in:
+- Batch ingestion: ETL jobs scheduled to run periodically
+- Streaming ingestion: Real-time pipelines (Kafka, Flink, etc.)
+- Tools: Fivetran, Stitch, custom APIs
+
+### 3. **Storage Layer**
+Where raw and transformed data lives:
+- **Relational DBs**: PostgreSQL, MySQL
+- **Data Lakes**: Amazon S3, Azure Blob, GCS
+- **Data Warehouses**: Snowflake, Redshift, BigQuery
+
+### 4. **Transformation Layer**
+Making raw data useful:
+- ETL/ELT logic
+- dbt (transformations in SQL)
+- Airflow (scheduling and orchestration)
+
+### 5. **Semantic Layer**
+Making data human-readable:
+- Logical models (e.g., LookML, dbt models)
+- Metric definitions
+- Dimensions, hierarchies
+
+### 6. **Access Layer**
+How people & systems query data:
+- SQL editors (DBeaver, DataGrip)
+- Dashboards (Streamlit, Posit, Looker)
+- APIs and data products
+
+---
+
+## 🔐 Governance and Quality
+
+- **Data Lineage**: Understand where data comes from and how it's transformed
+- **Data Catalogs**: Tools like Amundsen, DataHub, or internal Excel trackers
+- **Access Control**: Role-based permissions
+- **Data Contracts**: Expectations around schema and delivery
+- **Testing**: Use dbt tests, assertions, and alerts for monitoring
+
+---
+
+## 🧱 Architectures To Know
+
+### Data Lake
+- Stores raw, semi-structured, and unstructured data
+- Cheap and scalable (S3, GCS)
+
+### Data Warehouse
+- Structured, performant storage optimized for analytics
+- Expensive but fast (Snowflake, BigQuery)
+
+### Lakehouse
+- Combines both: flexibility of a lake + structure of a warehouse
+- Tools: Delta Lake, Iceberg, Hudi
+
+---
+
+## 🔁 Modern Data Stack
+
+- **Storage**: S3, Snowflake, Redshift
+- **Ingestion**: Fivetran, Airbyte, Kafka
+- **Transform**: dbt, SQL, Python
+- **Orchestration**: Airflow, Prefect
+- **Analytics**: Looker, Streamlit, Tableau
+- **Monitoring**: Monte Carlo, Great Expectations
+
+---
+
+## 🧠 Final Thought
+
+> Good data architecture balances performance, cost, scalability, governance, and usability. It’s not just how the system works—it’s how people work with it.
