@@ -109,3 +109,27 @@ Create a reusable file to paste into ChatGPT when starting a session:
 ## Data Projects
 - Merchant rankings: use `customer_account`, `customer_application`, `merchant`
 - Fraud monitoring: relies on `fraud_flag`, `investigation_outcomes`, `funded_amount`
+```
+
+---
+
+Then use prompts like:
+
+> “Using the context above, write a CTE that joins apps + accounts for active loans.”
+
+---
+
+## 🔁 Optional Enhancements
+
+- Add a script to auto-export schema from Trino to Markdown  
+- Use GPT to summarize and document `.sql` logic line by line  
+- Create a `prompt_logs/` directory to track successful use cases by project  
+
+---
+
+## 📚 References
+
+- [ChatGPT + SQL Prompt Tips](https://mode.com/blog/chatgpt-sql-data-analysis/)  
+- [dbt Docs Best Practices](https://docs.getdbt.com/docs/build/documentation)  
+- [Great Expectations – Data Profiling](https://greatexpectations.io/)  
+- [Trino SQL Docs](https://trino.io/docs/current/sql.html)
