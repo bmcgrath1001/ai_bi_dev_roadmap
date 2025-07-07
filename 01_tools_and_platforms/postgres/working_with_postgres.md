@@ -61,7 +61,7 @@ FROM user_activity;
 SELECT data->>'email' AS email
 FROM users
 WHERE data->>'role' = 'admin';
-
+```
 ---
 
 ## 📊 Performance Tips
